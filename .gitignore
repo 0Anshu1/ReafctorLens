@@ -1,0 +1,10 @@
+.env
+env.example
+node_modules/
+client/node_modules/
+package-lock.json
+client/package-lock.json
+logs/
+logs/*.log
+dist/
+build/
