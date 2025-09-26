@@ -68,20 +68,33 @@ RefactorLens/
 2. **Setup Environment**
   ```bash
   cp env.example .env
-  # Edit .env with your configuration
+  # Edit .env with your configuration (including GEMINI_API_KEY for chatbot)
   ```
 
-3. **Start Services**
+3. **Install Python AI/ML Requirements**
+  ```bash
+  cd ai
+  python -m venv venv
+  source venv/bin/activate  # On Windows: venv\Scripts\activate
+  pip install -r requirements.txt
+  ```
+
+4. **Start Services**
   ```bash
   # Start MongoDB and Redis
-  # Then start the application
+  # Start Python AI/ML service (chatbot)
+  cd ai
+  python chatbot_server.py
+  # In another terminal, start Node.js backend and React frontend
+  cd ..
   npm run dev
   ```
 
-4. **Access the Application**
+5. **Access the Application**
   - Frontend: http://localhost:3000
   - Backend API: http://localhost:4000
   - API Docs: http://localhost:4000/api-docs
+  - Chatbot: Accessible via UI (right-side panel)
 
 ## Logs
 
@@ -92,6 +105,9 @@ Log files are stored in the `logs/` directory:
 ## Environment Variables
 
 Configuration is managed via `.env` (see `env.example` for template). Do not commit `.env` to version control.
+
+**Important variables:**
+- `GEMINI_API_KEY`: Required for Gemini-powered chatbot
 
 
 
@@ -175,3 +191,8 @@ npm run lint    # Run ESLint
 ## License
 
 MIT License - see LICENSE file for details
+## Chatbot & Gemini API Integration
+
+- Gemini-powered chatbot available in the UI (right-side panel)
+- Python backend (`ai/chatbot_server.py`) handles AI/ML and chat responses
+- Ensure `GEMINI_API_KEY` is set in `.env` for chatbot functionality
