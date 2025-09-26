@@ -15,7 +15,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import { useThemeMode } from '../contexts/ThemeContext';
 import {
-  Code as CodeIcon,
+  Search as SearchIcon,
   History as HistoryIcon,
   Home as HomeIcon,
   Assessment as AssessmentIcon,
@@ -53,7 +53,7 @@ const Header: React.FC = () => {
             }}
             onClick={() => navigate('/')}
           >
-            <CodeIcon sx={{ mr: 1, fontSize: 32 }} />
+            <SearchIcon sx={{ mr: 1, fontSize: 32 }} />
             <Typography
               variant="h6"
               component="div"
@@ -65,9 +65,7 @@ const Header: React.FC = () => {
               RefactorLens
             </Typography>
           </Box>
-
           <Box sx={{ flexGrow: 1 }} />
-
           {!isMobile && (
             <Box sx={{ display: 'flex', gap: 1 }}>
               {navigationItems.map((item) => (
@@ -93,7 +91,6 @@ const Header: React.FC = () => {
               ))}
             </Box>
           )}
-
           {isMobile && (
             <Box sx={{ display: 'flex', gap: 0.5 }}>
               {navigationItems.map((item) => (

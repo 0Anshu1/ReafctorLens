@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useMemo, useState, useEffect } from 'react';
-import { ThemeProvider, createTheme, PaletteMode } from '@mui/material/styles';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import type { PaletteMode } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 
 interface ThemeContextType {
